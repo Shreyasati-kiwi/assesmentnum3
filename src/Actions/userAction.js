@@ -12,7 +12,6 @@ export  const login = (username, password) => async (dispatch) => {
       config
     );
     dispatch({ type: "LOGIN_SUCCESS", payload: data });
-    localStorage.setItem("token", data.token);
   } catch (error) {
     dispatch({ type: "LOGIN_FAIL", payload: error.response.data.message });
   }
