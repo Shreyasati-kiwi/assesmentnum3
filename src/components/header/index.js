@@ -99,6 +99,7 @@ const Header = () => {
               className="profile-button"
               src={user.image}
               onClick={handleDropdown}
+              alt="profile "
             />
             {user.firstName }
           </span>
@@ -107,6 +108,7 @@ const Header = () => {
               <img className="profile-photo"
                src={user.image}
                onClick={handleDropdown} 
+               alt="user "
                />
               <span className="name"> 
               {user.firstName} {user.lastName}
@@ -130,6 +132,7 @@ const Header = () => {
                                     src="https://img.icons8.com/ios-glyphs/512/macos-close.png"
                                     className="close"
                                     onClick={handleEditForm}
+                                    alt="close"
                                 />
                                 <label>
                                     <div className="avatar">
