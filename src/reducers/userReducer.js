@@ -10,6 +10,11 @@ export const userReducer = (state = { user: {} }, action) => {
                 ...state,
                 loading: true,
             };
+        case "UPDATE_PROFILE_REQUEST":
+            return {
+                ...state,
+                loading: true,
+            };
         case "LOGIN_SUCCESS":
             return {
                 ...state,
@@ -31,6 +36,12 @@ export const userReducer = (state = { user: {} }, action) => {
                 ...state,
                 selectedUsers: selectedArray,
             };
+        case "UPDATE_PROFILE_SUCCESS":
+            return {
+                ...state,
+                loading: false,
+                user: { ...state.user, ...action.payload },
+            };
         case "LOGIN_FAIL":
             return {
                 ...state,
@@ -46,14 +57,27 @@ export const userReducer = (state = { user: {} }, action) => {
                 loading: false,
                 error: action.payload,
             };
-       
+        case "UPDATE_PROFILE_FAIL":
+                return {
+                    ...state,
+                    loading: false,
+                    error: action.payload,
+                };
+        case "LOGOUT_SUCCESS":
+                return {
+                    loading: false,
+                    isAuthenticated: false,
+                    user: null,
+                    users: null,
+                };
+        case "LOGOUT_FAIL":
         case "ALL_USERS_FAIL":
             return {
                 ...state,
                 loading: false,
                 error: action.payload,
             };
-            case "CLEAR_SELECTED_USERS":
+        case "CLEAR_SELECTED_USERS":
                 return {
                     ...state,
                     selectedUsers: Array(state.users.length).fill(false),

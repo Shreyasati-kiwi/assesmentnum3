@@ -34,7 +34,30 @@ export const getAllUsers = () => async (dispatch) => {
     });
   }
 };
-
+// Logout User
+export const logout = () => async (dispatch) => {
+    try {
+      dispatch({ type: "LOGOUT_SUCCESS" });
+    } catch (error) {
+      dispatch({ type: "LOGOUT_FAIL", payload: error.response.data.message });
+    }
+  };
+  
+  // Update Profile
+  export const updateProfile = (userData) => async (dispatch) => {
+    try {
+      dispatch({ type: "UPDATE_PROFILE_REQUEST" });
+  
+      setTimeout(() => {
+        dispatch({ type: "UPDATE_PROFILE_SUCCESS", payload: userData });
+      }, 1000);
+    } catch (error) {
+      dispatch({
+        type: "UPDATE_PROFILE_FAIL",
+        payload: error.response.data.message,
+      });
+    }
+  };
 // select Users
 export const selectUsers = (ind, val) => async (dispatch) => {
   try {
