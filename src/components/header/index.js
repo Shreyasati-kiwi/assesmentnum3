@@ -13,7 +13,7 @@ const Header = () => {
       <div>
         <h3>EMPLOYEES RECORD</h3>
       </div>
-      { (
+      {
         <>
           <span className="right-top">
             <img
@@ -24,29 +24,17 @@ const Header = () => {
             Shreya
           </span>
           {showDropdown && (
-                        <div className="dropdown">
-                            <img
-                                className="profile-photo"
-                                
-                                onClick={handleDropdown}
-                            />
-                            <span className="name">
-                                shreya sati
-                            </span>
-                            <span>shreya@gmail.com</span>
-                            <button className="update" >
-                                Update
-                            </button>
-                            <button
-                                className="update logout"
-                                
-                            >
-                                Log out
-                            </button>
-                        </div>
-                    )}
+            <div className="dropdown">
+              <img className="profile-photo" onClick={handleDropdown} />
+              <span className="name">shreya sati</span>
+              <span>shreya@gmail.com</span>
+              <button className="update">Update</button>
+              <button className="update logout">Log out</button>
+            </div>
+          )}
+          
         </>
-      )}
+      }
     </div>
   );
 };

@@ -62,7 +62,7 @@ const Login = () => {
     return (
         <div>
             <form name="Login" onSubmit={handleSubmit}>
-                <h2>Let's set go!</h2>
+                <h2>LOGIN FORM</h2>
                 <div
                     className={
                         errors.username.length > 0
