@@ -18,7 +18,6 @@ const Login = () => {
         //event.target has input field, finalCheck is for submit time verification
         const { name, value } = finalCheck || event.target;
         let err = "";
-        //can have same check by controlled input fields too but chose this as it seemed more efficient(not sure if it so)
         switch (name) {
             case "username":
                 err = value.length < 3 ? "username is not valid!" : "";
